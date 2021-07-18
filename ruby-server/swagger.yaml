@@ -1,0 +1,12 @@
+---
+swagger: "2.0"
+info:
+  description: "CopycatDog copies a static web page (e.g. created via Wordpress or\
+    \ Webflow) to an S3 bucket from where you can host your page."
+  version: "1.0"
+  title: "CopycatDog API"
+host: "virtserver.swaggerhub.com"
+basePath: "/RichStone/CopycatDog/1.0"
+schemes:
+- "https"
+paths: {}
