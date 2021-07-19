@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: CopycatDog API with OpenAPI 3
+  description: CopycatDog copies a static web page (e.g. created via Wordpress or
+    Webflow) to an S3 bucket from where you can host your page.
+  version: "1.0"
+servers:
+- url: https://virtserver.swaggerhub.com/RichStone/CopycatDog3/1.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /copyToS3:
+    get:
+      summary: Copies a website to a specified AWS S3 bucket.
+      description: There\'s a lot more to says about this endpoint **but** we\'ll
+        keep it short for now.
+      operationId: copy_to_s3_get
+      parameters:
+      - name: s3BucketId
+        in: query
+        description: Your AWS S3 bucket ID where you want to store the website to
+          be copied.
+        required: true
+        style: form
+        explode: true
+        schema:
+          minimum: 1
+          type: string
+      - name: websiteUrl
+        in: query
+        description: The full website URL to be copied.
+        required: true
+        style: form
+        explode: true
+        schema:
+          minimum: 1
+          type: string
+      responses:
+        "200":
+          description: OK
+      x-openapi-router-controller: swagger_server.controllers.default_controller
+components: {}
+
